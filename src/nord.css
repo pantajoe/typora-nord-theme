@@ -1,0 +1,894 @@
+:root {
+  /* Typora CSS Variables */
+  /* change background */
+  --bg-color: var(--nord0);
+
+  /* change text color */
+  --text-color: var(--nord4);
+
+  --select-text-bg-color: var(--nord2);
+
+  /* change color of meta characetrs like `*` in markdown */
+  --md-char-color: var(--nord13);
+
+  /* change color of meta contents like image text or link address in markdown */
+  --meta-content-color: var(--nord14);
+
+  /* color of primary buttons */
+  --primary-color: var(--nord7);
+  --primary-btn-border-color: var(--nord7);
+  --primary-btn-text-color: var(--nord4);
+
+  /* border for sidebar, etc */
+  --window-border: 1px solid var(--nord6);
+
+  /* background color if list item in file tree or file list */
+  --active-file-bg-color: var(--nord2);
+  --active-file-text-color: var(--nord4);
+  --active-file-border-color: var(--nord7);
+
+  /* change background of sidebar */
+  --side-bar-bg-color: var(--bg-color);
+
+  /* background of control items when hover, like menu in sidebar */
+  --item-hover-bg-color: var(--nord1);
+  --item-hover-text-color: inherit;
+
+  --rawblock-edit-panel-bd: var(--nord1);
+
+  /* monospace font for codes, fences */
+  --monospace: 'JetBrains Mono', monospace;
+
+  /* Nord Styleguide (https://github.com/arcticicestudio/nord/blob/develop/src/nord.css) */
+  /*
+  Base component color of "Polar Night".
+  Used for texts, backgrounds, carets and structuring characters like curly- and square brackets.
+  Markup:
+  <div style="background-color:#2e3440; width=60; height=60"></div>
+  Styleguide Nord - Polar Night
+  */
+  --nord0: #2e3440;
+
+  /*
+  Lighter shade color of the base component color.
+  Used as a lighter background color for UI elements like status bars.
+  Markup:
+  <div style="background-color:#3b4252; width=60; height=60"></div>
+  Styleguide Nord - Polar Night
+  */
+  --nord1: #3b4252;
+
+  /*
+  Lighter shade color of the base component color.
+  Used as line highlighting in the editor.
+  In the UI scope it may be used as selection- and highlight color.
+  Markup:
+  <div style="background-color:#434c5e; width=60; height=60"></div>
+  Styleguide Nord - Polar Night
+  */
+  --nord2: #434c5e;
+
+  /*
+  Lighter shade color of the base component color.
+  Used for comments, invisibles, indent- and wrap guide marker.
+  In the UI scope used as pseudoclass color for disabled elements.
+  Markup:
+  <div style="background-color:#4c566a; width=60; height=60"></div>
+  Styleguide Nord - Polar Night
+  */
+  --nord3: #4c566a;
+
+  /*
+  Base component color of "Snow Storm".
+  Main color for text, variables, constants and attributes.
+  In the UI scope used as semi-light background depending on the theme shading design.
+  Markup:
+  <div style="background-color:#d8dee9; width=60; height=60"></div>
+  Styleguide Nord - Snow Storm
+  */
+  --nord4: #d8dee9;
+
+  /*
+  Lighter shade color of the base component color.
+  Used as a lighter background color for UI elements like status bars.
+  Used as semi-light background depending on the theme shading design.
+  Markup:
+  <div style="background-color:#e5e9f0; width=60; height=60"></div>
+  Styleguide Nord - Snow Storm
+  */
+  --nord5: #e5e9f0;
+
+  /*
+  Lighter shade color of the base component color.
+  Used for punctuations, carets and structuring characters like curly- and square brackets.
+  In the UI scope used as background, selection- and highlight color depending on the theme shading design.
+  Markup:
+  <div style="background-color:#eceff4; width=60; height=60"></div>
+  Styleguide Nord - Snow Storm
+  */
+  --nord6: #eceff4;
+
+  /*
+  Bluish core color.
+  Used for classes, types and documentation tags.
+  Markup:
+  <div style="background-color:#8fbcbb; width=60; height=60"></div>
+  Styleguide Nord - Frost
+  */
+  --nord7: #8fbcbb;
+
+  /*
+  Bluish core accent color.
+  Represents the accent color of the color palette.
+  Main color for primary UI elements and methods/functions.
+  Can be used for
+    - Markup quotes
+    - Markup link URLs
+  Markup:
+  <div style="background-color:#88c0d0; width=60; height=60"></div>
+  Styleguide Nord - Frost
+  */
+  --nord8: #88c0d0;
+
+  /*
+  Bluish core color.
+  Used for language-specific syntactic/reserved support characters and keywords, operators, tags, units and
+  punctuations like (semi)colons,commas and braces.
+  Markup:
+  <div style="background-color:#81a1c1; width=60; height=60"></div>
+  Styleguide Nord - Frost
+  */
+  --nord9: #81a1c1;
+
+  /*
+  Bluish core color.
+  Used for markup doctypes, import/include/require statements, pre-processor statements and at-rules (`@`).
+  Markup:
+  <div style="background-color:#5e81ac; width=60; height=60"></div>
+  Styleguide Nord - Frost
+  */
+  --nord10: #5e81ac;
+
+  /*
+  Colorful component color.
+  Used for errors, git/diff deletion and linter marker.
+  Markup:
+  <div style="background-color:#bf616a; width=60; height=60"></div>
+  Styleguide Nord - Aurora
+  */
+  --nord11: #bf616a;
+
+  /*
+  Colorful component color.
+  Used for annotations.
+  Markup:
+  <div style="background-color:#d08770; width=60; height=60"></div>
+  Styleguide Nord - Aurora
+  */
+  --nord12: #d08770;
+
+  /*
+  Colorful component color.
+  Used for escape characters, regular expressions and markup entities.
+  In the UI scope used for warnings and git/diff renamings.
+  Markup:
+  <div style="background-color:#ebcb8b; width=60; height=60"></div>
+  Styleguide Nord - Aurora
+  */
+  --nord13: #ebcb8b;
+
+  /*
+  Colorful component color.
+  Main color for strings and attribute values.
+  In the UI scope used for git/diff additions and success visualizations.
+  Markup:
+  <div style="background-color:#a3be8c; width=60; height=60"></div>
+  Styleguide Nord - Aurora
+  */
+  --nord14: #a3be8c;
+
+  /*
+  Colorful component color.
+  Used for numbers.
+  Markup:
+  <div style="background-color:#b48ead; width=60; height=60"></div>
+  Styleguide Nord - Aurora
+  */
+  --nord15: #b48ead;
+}
+
+/* Define Fonts */
+
+/* Open Sans - Regular */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url('./nord/open-sans/open-sans-v17-latin-ext_latin-regular.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD, U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Open Sans - Italic */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: normal;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url('./nord/open-sans/open-sans-v17-latin-ext_latin-italic.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD, U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Open Sans - Bold */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: bold;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url('./nord/open-sans/open-sans-v17-latin-ext_latin-700.woff2') format('woff2'); 
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD, U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Open Sans - Bold Italic */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: bold;
+  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url('./nord/open-sans/open-sans-v17-latin-ext_latin-700italic.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD, U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* JetBrains Mono - Regular */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: normal;
+  src: local('JetBrains Mono Regular'), local('JetBrainsMono-Regular'), url('./nord/jetbrains-mono/JetBrainsMono-Regular.woff2') format('woff2');
+}
+
+/* JetBrains Mono - Italic */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: italic;
+  font-weight: normal;
+  src: local('JetBrains Mono Italic'), local('JetBrainsMono-Italic'), url('./nord/jetbrains-mono/JetBrainsMono-Italic.woff2') format('woff2');
+}
+
+/* JetBrains Mono - Bold */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: bold;
+  src: local('JetBrains Mono Bold'), local('JetBrainsMono-Bold'), url('./nord/jetbrains-mono/JetBrainsMono-Bold.woff2') format('woff2'); 
+}
+
+/* JetBrains Mono - Bold Italic */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: italic;
+  font-weight: bold;
+  src: local('JetBrains Mono Bold Italic'), local('JetBrainsMono-Bold-Italic'), url('./nord/jetbrains-mono/JetBrainsMono-Bold-Italic.woff2') format('woff2');
+}
+
+/* Structure and Alignment */
+
+html {
+  font-size: 16px;
+  font-family: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: auto;
+}
+
+body {
+  line-height: 1.6;
+}
+
+#write {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 30px;
+  padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+  #write {
+    max-width: 1024px;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  #write {
+    max-width: 1200px;
+  }
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+  margin-top: 30px;
+}
+
+/** Source Mode **/
+
+.typora-sourceview-on {
+  font-size: 16px;
+  font-family: var(--monospace) !important;
+}
+
+/* blockquote */
+.typora-sourceview-on .cm-atom {
+  color: var(--nord10);
+}
+
+/* code fences */
+.typora-sourceview-on .cm-comment {
+  color: var(--nord7) !important;
+}
+
+.typora-sourceview-on .cm-hr,
+.typora-sourceview-on .cm-yaml {
+  color: var(--nord3)
+}
+
+.typora-sourceview-on .cm-code {
+  color: var(--nord4);
+}
+
+.typora-sourceview-on .cm-string {
+  color: var(--nord14);
+}
+
+.typora-sourceview-on .cm-link {
+  color: var(--nord7) !important;
+}
+
+/** Markdown Elements **/
+.md-comment {
+  color: var(--nord3);
+}
+
+.md-image-before-src,
+.md-image-after-src {
+  color: var(--nord7);
+}
+
+.md-image-src-span {
+  color: var(--nord14);
+}
+
+.md-lang {
+  color: var(--nord12);
+}
+
+/* Code fences in markdown fences */
+.md-fences[lang="markdown"] .cm-comment {
+  color: var(--nord7) !important;
+}
+
+.md-fences[lang="markdown"] .cm-header {
+  color: var(--nord8) !important;
+}
+
+.md-raw-inline {
+  color: var(--nord12) !important;
+}
+
+#md-notification .btn {
+  border: 0;
+}
+
+a {
+  color: var(--nord8);
+}
+
+mark {
+  background-color: var(--nord13);
+  color: var(--nord1);
+}
+
+/* YAML Front Matter */
+#write pre.md-meta-block {
+  padding: 1rem;
+  font-size: 75%;
+  line-height: 1.45;
+  background-color: var(--nord1);
+  border: 0;
+  border-radius: 3px;
+  color: var(--nord4);
+  margin-top: 0 !important;
+}
+
+.md-inline-math script {
+  color: var(--nord14);
+}
+
+.mathjax-block > .code-tooltip {
+  bottom: .375rem;
+}
+
+.md-mathjax-midline {
+  background: var(--nord1);
+}
+.md-image > .md-meta {
+  border-radius: 3px;
+  padding: 2px 0px 0px 4px;
+  font-size: 0.9em;
+  color: inherit;
+}
+
+.md-blockmeta {
+  color: var(--nord10);
+}
+
+.md-tag {
+  color: var(--nord2);
+  opacity: 1;
+}
+
+.sup.md-footnote {
+  background-color: var(--nord1) !important;
+  color: var(--nord5) !important;
+}
+
+.md-def-footnote .md-def-content {
+  color: var(--text-color) !important;
+}
+
+.md-def-title,
+.md-def-title,
+.md-def-name {
+  color: var(--nord6) !important;
+}
+
+.md-def-content {
+  color: var(--nord7) !important;
+}
+
+.md-def-name::before,
+.md-def-name::after {
+  color: var(--nord13);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  line-height: 1.4;
+  cursor: text;
+}
+
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+  text-decoration: none;
+}
+
+h1 tt,
+h1 code {
+  font-size: inherit;
+}
+
+h2 tt,
+h2 code {
+  font-size: inherit;
+}
+
+h3 tt,
+h3 code {
+  font-size: inherit;
+}
+
+h4 tt,
+h4 code {
+  font-size: inherit;
+}
+
+h5 tt,
+h5 code {
+  font-size: inherit;
+}
+
+h6 tt,
+h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  padding-bottom: .3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid var(--nord1);
+}
+
+h2 {
+  padding-bottom: .3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid var(--nord1);
+}
+
+h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+h4 {
+  font-size: 1.25em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: 1em;
+}
+
+p,
+blockquote,
+ul,
+ol,
+dl,
+table {
+  margin: 0.8em 0;
+}
+
+li > ol,
+li > ul {
+  margin: 0 0;
+}
+
+hr {
+  height: 2px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: var(--nord3);
+  border: 0 none;
+  overflow: hidden;
+  box-sizing: content-box;
+}
+
+li p.first {
+  display: inline-block;
+}
+
+ul,
+ol {
+  padding-left: 30px;
+}
+
+ul:first-child,
+ol:first-child {
+  margin-top: 0;
+}
+
+ul:last-child,
+ol:last-child {
+  margin-bottom: 0;
+}
+
+blockquote {
+  border-left: 4px solid var(--nord9);
+  padding: 0 15px;
+  background-color: var(--nord1);
+  color: var(--nord5);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+blockquote blockquote {
+  padding-right: 0;
+}
+
+table {
+  padding: 0;
+  word-break: initial;
+}
+
+table tr {
+  border-top: 1px solid var(--nord6);
+  margin: 0;
+  padding: 0;
+}
+
+table tr th {
+  font-weight: bold;
+  border: 1px solid var(--nord6);
+  border-bottom: 0;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+table tr td {
+  border: 1px solid var(--nord6);
+  margin: 0;
+  padding: 6px 13px;
+}
+
+table tr th:first-child,
+table tr td:first-child {
+  margin-top: 0;
+}
+
+table tr th:last-child,
+table tr td:last-child {
+  margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+  padding-left: 4px;
+}
+
+.code-tooltip {
+  box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+  border-top: 1px solid var(--nord4);
+  background-color: var(--nord2);
+  color: var(--nord5);
+}
+
+.md-fences,
+code,
+tt {
+  border: 1px solid var(--nord3);
+  background-color: var(--nord0);
+  border-radius: 3px;
+  padding: 0;
+  padding: 2px 4px 0px 4px;
+  font-size: 0.9em;
+}
+
+.md-fences {
+  background-color: var(--nord1);
+}
+
+code {
+  background-color: var(--nord1);
+  padding: 0 2px 0 2px;
+}
+
+.md-fences {
+  margin-bottom: 15px;
+  margin-top: 15px;
+  padding-top: 8px;
+  padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+  html {
+    font-size: 13px;
+  }
+  table,
+  pre {
+    page-break-inside: avoid;
+  }
+  pre {
+    word-wrap: break-word;
+  }
+}
+
+#write > h3.md-focus:before{
+  left: -1.5625rem;
+  top: .375rem;
+}
+
+#write > h4.md-focus:before{
+  left: -1.5625rem;
+  top: .285714286rem;
+}
+
+#write > h5.md-focus:before{
+  left: -1.5625rem;
+  top: .285714286rem;
+}
+
+#write > h6.md-focus:before{
+  left: -1.5625rem;
+  top: .285714286rem;
+}
+
+.md-toc {
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+.sidebar-tabs {
+  border-bottom: none;
+}
+
+/** quick open **/
+.auto-suggest-container {
+  border: 0px;
+  background-color: var(--nord1);
+}
+
+#typora-quick-open {
+  border: 1px solid var(--nord2) !important;
+  background-color: var(--nord1);
+}
+
+#typora-quick-open input {
+  background-color: var(--nord3);
+  border: 1px solid var(--nord9) !important;
+}
+
+.typora-quick-open-item {
+  background-color: var(--nord1) !important;
+  border-color: var(--nord1) !important;
+  color: var(--nord5) !important;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.typora-quick-open-item:hover,
+.typora-quick-open-item.active {
+  background-color: var(--nord9) !important;
+  color: var(--nord5) !important;
+}
+
+
+.on-focus-mode blockquote {
+  border-left-color: var(--nord10);
+}
+
+header, .context-menu, .megamenu-content, footer{
+  font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state {
+  visibility: visible;
+}
+
+.dropdown-menu .divider {
+  border-color: var(--nord4);
+}
+
+.ty-preferences .window-content {
+  background-color: var(--nord1);
+}
+
+.ty-preferences .nav-group-item.active {
+  color: var(--nord5);
+  background: var(--nord2);
+}
+
+/** CodeMirror */
+.CodeMirror-cursor {
+  color: var(--nord6) !important;
+}
+
+pre.md-meta-block {
+  background-color: var(--item-hover-bg-color);
+}
+
+.cm-header,
+.cm-property {
+  color: var(--nord8) !important;
+}
+
+.cm-number {
+  color: var(--nord15) !important;
+}
+
+.CodeMirror-wrap {
+  background-color: var(--nord1);
+}
+
+.cm-s-inner .cm-property,
+.cm-s-inner .cm-attribute {
+  color: var(--nord7) !important;
+}
+
+a {
+  color: var(--nord7) !important;
+}
+
+.cm-link {
+  color: var(--nord15) !important;
+}
+
+.cm-code {
+  color: var(--nord14) !important;
+}
+
+.cm-comment {
+  color: var(--nord3);
+}
+
+.cm-tag {
+  color: var(--nord8) !important;
+}
+
+.cm-s-inner .cm-meta,
+.cm-s-inner .cm-qualifier {
+  color: var(--nord12) !important;
+}
+
+.cm-s-inner .cm-keyword,
+.cm-s-inner .cm-atom,
+.cm-s-inner .cm-builtin {
+  color: var(--nord9) !important;
+}
+
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-variable-2 {
+  color: var(--nord4) !important;
+}
+
+.cm-s-inner .cm-def,
+.cm-s-inner .cm-type,
+.cm-s-inner .cm-variable-3 {
+  color: var(--nord7) !important;
+}
+
+.cm-s-inner .cm-string {
+  color: var(--nord14) !important;
+}
+
+.cm-s-inner .cm-string-2 {
+  color: var(--nord13) !important;
+}
+
+.cm-s-inner .cm-operator {
+  color: var(--text-color) !important;
+}
+
+.modal-content {
+  border-color: var(--nord3);
+}
+
+input {
+  border: 1px solid var(--nord3);
+}
+
+.megamenu-content {
+  color: var(--nord3);
+}
+
+.CodeMirror-activeline-background {
+  background-color: var(--nord2) !important;
+}
+
+.cm-s-inner .cm-bracket {
+  color: #81a1c1 !important;
+}
+
+.cm-s-inner .cm-header {
+  color: var(--nord8) !important;
+}
+
+.cm-positive,
+.cm-s-inner .cm-quote,
+.cm-s-inner.cm-quote {
+  color: var(--nord7);
+}
+
+.cm-s-inner .cm-hr,
+.cm-s-inner.cm-hr {
+  color: var(--nord3);
+}
+
+.cm-error {
+  background: var(--nord11);
+  color: var(--nord6);
+}
+
+.cm-negative,
+.cm-invalidchar,
+.CodeMirror-nonmatchingbracket {
+  color: var(--nord11);
+}
+
+.CodeMirror-matchingbracket {
+  text-decoration: underline;
+  color: var(--nord5) !important;
+}
