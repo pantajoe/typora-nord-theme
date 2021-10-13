@@ -623,6 +623,11 @@ table tr td:last-child {
   padding-left: 4px;
 }
 
+strong{
+  color: #bf616a;
+}
+
+
 .code-tooltip {
   box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
   border-top: 1px solid var(--nord4);
