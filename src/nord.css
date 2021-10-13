@@ -571,6 +571,10 @@ ol:last-child {
   margin-bottom: 0;
 }
 
+strong{
+  color: #bf616a;
+}
+
 blockquote {
   border-left: 4px solid var(--nord9);
   padding: 0 15px;
@@ -622,6 +626,9 @@ table tr td:last-child {
 .CodeMirror-lines {
   padding-left: 4px;
 }
+
+
+
 
 .code-tooltip {
   box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
